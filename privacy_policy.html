@@ -33,11 +33,11 @@
 <body>
   <h1>Privacy Policy — ChatSnap</h1>
 
-  <p><strong>Last Updated:</strong> May 2026</p>
+  <p><strong>Last Updated:</strong> October 2026</p>
 
   <h2>Overview</h2>
   <p>
-    ChatSnap is a Chrome extension that allows you to export conversations from Claude.ai, ChatGPT, and Google Gemini to multiple formats (Markdown, JSON, DOC, PDF). <strong>All processing is local to your browser. No data is sent to external servers or services.</strong>
+    ChatSnap is a Chrome extension that allows you to export conversations from Claude.ai, ChatGPT, and Google Gemini to multiple formats (Markdown, PDF, DOC, HTML, TXT, JSON), or copy them to your clipboard. <strong>All processing is local to your browser. No data is sent to external servers or services.</strong>
   </p>
 
   <h2>What Data We Collect</h2>
@@ -46,7 +46,7 @@
     <li>Reads only the messages visible on the chat page you're viewing</li>
     <li>Processes everything in your browser's memory</li>
     <li>Does not send any data over the network (except to the platform's own API, using your existing login session)</li>
-    <li>Does not store any information locally on your device</li>
+    <li>Stores only your export preferences (chosen format and option checkboxes) locally in Chrome — never any conversation content</li>
     <li>Does not use analytics, tracking, or telemetry</li>
   </ul>
 
@@ -55,6 +55,9 @@
   <ul>
     <li><code>activeTab</code> — Required to detect which platform you're on (Claude, ChatGPT, or Gemini)</li>
     <li><code>scripting</code> — Required to inject the export logic into the page</li>
+    <li><code>tabs</code> — Required to show the matching platform icon for the current tab</li>
+    <li><code>storage</code> — Remembers your last-used format and options on your device</li>
+    <li><code>contextMenus</code> — Adds the "ChatSnap — export this chat" right-click menu on supported sites</li>
   </ul>
 
   <h2>How Export Works</h2>
@@ -62,8 +65,8 @@
   <ol>
     <li>The extension reads the HTML content of the page in your browser</li>
     <li>It extracts messages and metadata (title, timestamp if available)</li>
-    <li>It formats the content according to your chosen format (Markdown, JSON, DOC, or PDF)</li>
-    <li>It downloads the file to your computer</li>
+    <li>It formats the content according to your chosen format (Markdown, PDF, DOC, HTML, TXT, or JSON)</li>
+    <li>It downloads the file to your computer, or (with "Copy") puts the text on your clipboard</li>
   </ol>
 
   <h2>Third-Party APIs</h2>
